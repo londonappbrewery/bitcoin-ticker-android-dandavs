@@ -12,15 +12,19 @@
     tools:context="com.londonappbrewery.bitcointicker.MainActivity">
 
     <TextView
+        android:id="@+id/txtViewLast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        android:layout_marginTop="39dp"
         android:text="@string/label_default_text"
-        android:id="@+id/priceLabel"
+        android:textColor="@color/fontColour"
         android:textSize="45sp"
         android:textStyle="bold"
-        android:textColor="@color/fontColour"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_below="@+id/logoImage"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
 
     <ImageView
         android:layout_width="wrap_content"
@@ -32,34 +36,99 @@
         android:layout_centerHorizontal="true"/>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/priceLabel"
-        android:gravity="center_vertical|center_horizontal">
+        android:layout_marginRight="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/txtViewLow"
+        android:layout_alignEnd="@+id/txtViewLow">
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/base"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:id="@+id/textView"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginRight="10dp"
+            android:text="@string/base"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
 
         <Spinner
+            android:id="@+id/currency_spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/currency_spinner"
+            android:dropDownSelector="@color/fontColour"
             android:gravity="center_horizontal"
             android:spinnerMode="dropdown"
-            android:dropDownSelector="@color/fontColour"
             />
 
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtViewLow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/label_default_text"
+        android:textColor="@color/fontColour"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/txtViewHigh"
+        android:layout_alignLeft="@+id/txtViewHigh"
+        android:layout_alignStart="@+id/txtViewHigh"/>
+
+    <TextView
+        android:id="@+id/txtViewHigh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtViewLast"
+        android:layout_alignStart="@+id/txtViewLast"
+        android:layout_below="@+id/txtViewLast"
+        android:layout_marginTop="31dp"
+        android:layout_weight="1"
+        android:text="@string/label_default_text"
+        android:textColor="@color/fontColour"
+        android:textSize="45sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/lblLast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtViewHigh"
+        android:layout_alignLeft="@+id/linearLayout"
+        android:layout_alignStart="@+id/linearLayout"
+        android:text="@string/lasttitle"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
+
+    <TextView
+        android:id="@+id/lblHigh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtViewHigh"
+        android:layout_alignBottom="@+id/txtViewHigh"
+        android:layout_alignLeft="@+id/lblLast"
+        android:layout_alignStart="@+id/lblLast"
+        android:text="High:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
+
+    <TextView
+        android:id="@+id/lblLow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txtViewLow"
+        android:layout_alignLeft="@+id/lblHigh"
+        android:layout_alignStart="@+id/lblHigh"
+        android:text="Low:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
 
 </RelativeLayout>
